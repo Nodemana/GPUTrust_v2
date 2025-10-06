@@ -1,6 +1,42 @@
 {
+  "name": "webgputrust",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "populate-db": "node scripts/populate-db.js",
+    "populate-db:clear": "node scripts/populate-db.js --clear",
+    "populate-db:large": "node scripts/populate-db.js --users=20 --benchmarks=50 --listings=100",
+    "populate-db:service": "npx tsx src/app/lib/db/populate-db-service-role.ts",
+    "populate-db:service:clear": "npx tsx src/app/lib/db/populate-db-service-role.ts --clear",
+    "populate-db:service:large": "npx tsx src/app/lib/db/populate-db-service-role.ts --users=20 --benchmarks=50 --listings=100",
+    "test-auth": "npx tsx src/app/lib/db/test-auth-creation.ts"
+  },
   "dependencies": {
-    "@supabase/supabase-js": "^2.53.0",
-    "dotenv": "^17.2.1"
+    "@supabase/supabase-js": "^2.58.0",
+    "dotenv": "^17.2.3",
+    "next": "15.5.4",
+    "pg": "^8.16.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "recharts": "^3.2.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.15.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "supabase": "^2.48.3",
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5"
   }
 }

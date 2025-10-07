@@ -14,10 +14,10 @@ export function GPUDetailsCardSkeleton({
       `}
     >
       {/* Image Section Skeleton */}
-      <div className="relative aspect-video bg-gray-200 dark:bg-gray-700 animate-pulse">
+      <div className="relative aspect-video bg-secondary dark:bg-secondary animate-pulse">
         {/* Status Badge Skeleton */}
         <div className="absolute top-3 right-3">
-          <div className="h-6 w-16 bg-gray-300 dark:bg-gray-600 rounded-full animate-pulse"></div>
+          <div className="h-6 w-16 bg-secondary dark:bg-secondary rounded-full animate-pulse"></div>
         </div>
       </div>
 

@@ -102,16 +102,29 @@ export function GPUMetricsRadar({ gpuMetrics, averageMetrics, bestPossibleMetric
   const domain = calculateDomain();
 
   return (
-    <div className="bg-primary dark:bg-primary rounded-lg p-6 shadow-sm border border-stroke dark:border-stroke">
-      <h3 className="text-2xl font-sans font-bold text-text-light dark:text-text-light mb-4">
+    <div className="bg-primary dark:bg-primary rounded-lg p-8 md:p-10 shadow-sm border border-stroke dark:border-stroke">
+      <h3 className="text-2xl font-sans font-bold text-text-light dark:text-text-light mb-6">
         Relative Performance
       </h3>
-      <div className="h-80">
+      <div className="h-[28rem] md:h-[32rem]">
         <ResponsiveContainer width="100%" height="100%">
-          <RadarChart data={data}>
+          <RadarChart
+            data={data}
+            outerRadius="80%"
+            margin={{ top: 24, right: 24, bottom: 24, left: 24 }}
+          >
             <PolarGrid />
-            <PolarAngleAxis dataKey="metric" />
-            <PolarRadiusAxis angle={90} domain={domain} />
+            <PolarAngleAxis
+              dataKey="metric"
+              tick={{ fontSize: 12 }}
+              tickMargin={10}
+            />
+            <PolarRadiusAxis
+              angle={90}
+              domain={domain}
+              tick={{ fontSize: 12 }}
+              tickCount={6}
+            />
             <Tooltip
               formatter={(value, name) => [`${Math.floor(value as number)}%`, name]}
               contentStyle={{
@@ -151,7 +164,7 @@ export function GPUMetricsRadar({ gpuMetrics, averageMetrics, bestPossibleMetric
               strokeWidth={1}
               strokeDasharray="5 5"
             />
-            <Legend />
+            <Legend verticalAlign="bottom" wrapperStyle={{ paddingTop: 16 }} />
           </RadarChart>
         </ResponsiveContainer>
       </div>
@@ -168,12 +181,7 @@ export function GPUMetricsRadar({ gpuMetrics, averageMetrics, bestPossibleMetric
           <span className="inline-block w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
           <strong>Best:</strong> Top known performance for this GPU model
         </p>
-        <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-          <em>Note: Power Efficiency and Thermal Efficiency show how close to optimal (lowest) values the GPU performs.</em>
-        </p>
-        <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-          <em>Chart auto-scales to show data range: {domain[0].toFixed(0)}% - {domain[1].toFixed(0)}%</em>
-        </p>
+
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { GPUMetricsCards } from './components/GPUMetricsCards';
 import { GPUTimeSeriesChart } from './components/GPUTimeSeriesChart';
 import { GPUListing } from '@/app/features/listings/[id]/types/listing.types';
 import { fetchAverageMetrics, fetchGPUListing } from './queries/details';
+import { Button } from '@/app/shared/components/Button';
 
 
 export default function GPUListingDetailsPage() {
@@ -165,6 +166,10 @@ export default function GPUListingDetailsPage() {
                   <span className="font-medium">{gpuListing.gpu.tensorCores}</span>
                 </div>
                 <div className="flex justify-between">
+                  <span className="text-text-light dark:text-text-light">RT Cores:</span>
+                  <span className="font-medium">{gpuListing.gpu.rtCores}</span>
+                </div>
+                <div className="flex justify-between">
                   <span className="text-text-light dark:text-text-light">CUDA Version:</span>
                   <span className="font-medium">{gpuListing.benchmarkScore.cudaVersion}</span>
                 </div>
@@ -208,6 +213,9 @@ export default function GPUListingDetailsPage() {
                       <div className="text-sm text-gray-500 dark:text-gray-400">
                         Listed {gpuListing.listedAt.toLocaleDateString()}
                       </div>
+                      <Button onClick={() => {console.log('Contact Seller');}} variant="secondary" size="md">
+                        Contact Seller
+                      </Button>
                     </div>
                   </div>
                 </div>

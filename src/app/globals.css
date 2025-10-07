@@ -1,18 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #151A1F;
-  --color-secondary: #2C3135;
-  --color-highlight: #34fc66;
-  --color-dark-highlight: #196c2e;
-  --color-secondary-highlight: #F9E290;
-  --color-stroke: #8A8D8F;
-  --color-highlight-stroke: #9AFEB3;
-  --color-secondary-highlight-stroke: #FCF1C8;
-  --color-text-light: #DEDEDE;
-  --color-text-dark: #151A1F;
-  --color-danger: #cb2323;
+  --color-primary: hsl(213, 18%, 10%); /* #151A1F; hsl(213, 18, 10);*/
+  --color-secondary: hsl(207, 9%, 19%); /* #2C3135; */
+  --color-highlight: hsl(135, 97%, 60%); /* #34fc66; */
+  --color-highlight-dark: hsl(135, 97%, 45%); /* #196c2e; */
+  --color-secondary-highlight: hsl(47, 90%, 77%); /* #F9E290; */
+  --color-stroke: hsl(204,2%,55%); /* #8A8D8F; */
+  --color-highlight-stroke: hsl(135, 98%, 80%); /* #9AFEB3; */
+  --color-secondary-highlight-stroke: hsl(47, 90%, 89%); /* #FCF1C8; */
+  --color-text-light: hsl(0, 0%, 87%); /* #DEDEDE; */
+  --color-text-dark: hsl(210, 19%, 10%); /* #151A1F; */
+  --color-danger: hsl(0, 100%, 50%); 
   
+  --size-small: 0.5rem;
+  --size-medium: 1rem;
+  --size-large: 2rem;
+  --size-xlarge: 4rem;
+  --size-xxlarge: 8rem;
+  --size-xxxlarge: 16rem;
+  --size-xxxxlarge: 32rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-xlarge: 4rem;
+  --spacing-xxlarge: 8rem;
+  --spacing-xxxlarge: 16rem;
+  --spacing-xxxxlarge: 32rem;
 }
 
 :root {

@@ -22,7 +22,7 @@ function MetricCard({ title, value, average, unit, formatValue, isHigherBetter =
         <h4 className="text-sm font-medium text-text-light dark:text-text-light">{title}</h4>
         <span className={`text-xs px-2 py-1 rounded-full ${
           isAboveAverage 
-            ? 'bg-highlight text-text-dark dark:bg-highlight dark:text-text-dark' 
+            ? 'bg-highlight-dark text-text-dark dark:bg-highlight-dark dark:text-text-dark' 
             : 'bg-danger text-text-light dark:bg-danger dark:text-text-light'
         }`}>
           {percentage > 0 ? '+' : ''}{percentage.toFixed(1)}%

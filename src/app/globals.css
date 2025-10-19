@@ -2,7 +2,7 @@
 
 @theme {
   --color-primary: hsl(213, 18%, 10%); /* #151A1F; hsl(213, 18, 10);*/
-  --color-secondary: hsl(207, 9%, 19%); /* #2C3135; */
+  --color-secondary: hsl(213, 18%, 13%); /* #2C3135; */
   --color-highlight: hsl(135, 97%, 60%); /* #34fc66; */
   --color-highlight-dark: hsl(135, 97%, 45%); /* #196c2e; */
   --color-secondary-highlight: hsl(47, 90%, 77%); /* #F9E290; */
@@ -11,6 +11,7 @@
   --color-secondary-highlight-stroke: hsl(47, 90%, 89%); /* #FCF1C8; */
   --color-text-light: hsl(0, 0%, 87%); /* #DEDEDE; */
   --color-text-dark: hsl(210, 19%, 10%); /* #151A1F; */
+  --color-text-muted: hsl(217, 10.6%, 64.9%); 
   --color-danger: hsl(0, 100%, 50%); 
   
   --size-small: 0.5rem;
@@ -32,13 +33,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+/* To hide scrollbar for Chrome, Safari, and Opera, add the following outside this block: */
+html::-webkit-scrollbar {
+  display: none;
+} 
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-khula), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,4 +57,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+/* Override browser autofill styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* For dark mode autofill */
+@media (prefers-color-scheme: dark) {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px hsl(213, 18%, 13%) inset !important;
+    -webkit-text-fill-color: hsl(0, 0%, 87%) !important;
+    background-color: hsl(213, 18%, 13%) !important;
+  }
 }
